@@ -22,11 +22,10 @@
 
 "How to simulate worker failure in Docker and reassign chunk processing to other workers automatically?"
 
-- Added master failover loop for each chunk
 
 ---
 
 ## Prompt 5: Documentation and viva prep
 
-"Generate concise architecture explanation, debugging report format, and viva-ready points for distributed MapReduce with Docker."
+"Generate concise architecture explanation, debugging report format"
 
