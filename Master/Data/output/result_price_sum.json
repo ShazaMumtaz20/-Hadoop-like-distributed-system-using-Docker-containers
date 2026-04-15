@@ -1,0 +1,56 @@
+{
+  "task_type": "price_sum",
+  "dataset": "/data/Fruit Prices 2022.csv",
+  "total_chunks": 4,
+  "partial_results": [
+    {
+      "chunk_id": "chunk-1",
+      "result": {
+        "avg_retail_price": 3.3686,
+        "count": 20,
+        "sum_retail_price": 67.3711
+      },
+      "status": "success",
+      "task_type": "price_sum",
+      "worker_id": "worker1"
+    },
+    {
+      "chunk_id": "chunk-2",
+      "result": {
+        "avg_retail_price": 2.7227,
+        "count": 20,
+        "sum_retail_price": 54.4535
+      },
+      "status": "success",
+      "task_type": "price_sum",
+      "worker_id": "worker2"
+    },
+    {
+      "chunk_id": "chunk-3",
+      "result": {
+        "avg_retail_price": 3.0057,
+        "count": 20,
+        "sum_retail_price": 60.1147
+      },
+      "status": "success",
+      "task_type": "price_sum",
+      "worker_id": "worker3"
+    },
+    {
+      "chunk_id": "chunk-4",
+      "result": {
+        "avg_retail_price": 1.862,
+        "count": 2,
+        "sum_retail_price": 3.7241
+      },
+      "status": "success",
+      "task_type": "price_sum",
+      "worker_id": "worker1"
+    }
+  ],
+  "final_result": {
+    "global_sum_retail_price": 185.6634,
+    "global_count": 62,
+    "global_avg_retail_price": 2.9946
+  }
+}

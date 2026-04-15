@@ -1,0 +1,63 @@
+networks:
+  hadoop-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16
+
+services:
+  worker1:
+    build:
+      context: ./Worker
+      dockerfile: Dockerfile.txt
+    container_name: worker1
+    environment:
+      - WORKER_ID=worker1
+      - SIMULATE_FAILURE=false
+    networks:
+      hadoop-net:
+        ipv4_address: 172.20.0.11
+
+  worker2:
+    build:
+      context: ./Worker
+      dockerfile: Dockerfile.txt
+    container_name: worker2
+    environment:
+      - WORKER_ID=worker2
+      - SIMULATE_FAILURE=false
+    networks:
+      hadoop-net:
+        ipv4_address: 172.20.0.12
+
+  worker3:
+    build:
+      context: ./Worker
+      dockerfile: Dockerfile.txt
+    container_name: worker3
+    environment:
+      - WORKER_ID=worker3
+      - SIMULATE_FAILURE=false
+    networks:
+      hadoop-net:
+        ipv4_address: 172.20.0.13
+
+  master:
+    build:
+      context: ./Master
+      dockerfile: Dockerfile.txt
+    container_name: master
+    depends_on:
+      - worker1
+      - worker2
+      - worker3
+    volumes:
+      - ./Master/Data:/data
+    environment:
+      - TASK_TYPE=price_sum
+      - CHUNK_SIZE=20
+      - DATASET_PATH=/data/Fruit Prices 2022.csv
+      - OUTPUT_DIR=/data/output
+    networks:
+      hadoop-net:
+        ipv4_address: 172.20.0.10
