@@ -1,6 +1,5 @@
 # Prompt Log (Vibe Coding)
 
-Use this file as your submission prompt log. You can keep these prompts exactly as used or adapt with your own chat history.
 
 ## Prompt 1: Initial architecture
 
